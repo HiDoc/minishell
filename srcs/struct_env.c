@@ -6,7 +6,7 @@
 /*   By: fmadura <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/20 15:48:57 by fmadura           #+#    #+#             */
-/*   Updated: 2018/09/20 15:53:23 by fmadura          ###   ########.fr       */
+/*   Updated: 2018/09/20 17:12:39 by fmadura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,48 @@
 
 extern char **environ;
 
-t_env	*init_env(t_env *env)
+int		get_tablen(char **tab)
 {
 	int		i;
 
 	i = 0;
-	if (environ)
+	if (tab)
 	{
-		while (environ[i])
+		while (tab[i])
 			i++;
-		if ((env->environ = malloc(sizeof(char *) * (i + 1))) == NULL)
+	}
+	return (i);
+}
+
+char	**copy_tab(char **src, char *add)
+{
+	char	**dest;
+	int		i;
+
+	i = 0;
+	dest = NULL;
+	if (src)
+	{
+		i = get_tablen(src);
+		if (add)
+			i++;
+		if ((dest = malloc(sizeof(char *) * (i + 1))) == NULL)
 			return (NULL);
 		i = 0;
-		while (environ[i])
+		while (src[i])
 		{
-			env->environ[i] = ft_strdup(environ[i]);
+			dest[i] = ft_strdup(src[i]);
 			i++;
 		}
-		env->environ[i] = NULL;
+		if (add)
+			dest[i++] = ft_strdup(add);
+		dest[i] = NULL;
 	}
+	return (dest);
+}
+
+t_env	*init_env(t_env *env)
+{
+	env->environ = copy_tab(environ, NULL);
 	return (env);
 }
