@@ -1,31 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ms_struct.h                                        :+:      :+:    :+:   */
+/*   struct_cmd.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fmadura <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: jyildiz- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/20 14:51:07 by fmadura           #+#    #+#             */
-/*   Updated: 2018/09/20 17:18:30 by jyildiz-         ###   ########.fr       */
+/*   Created: 2018/09/20 17:06:32 by jyildiz-          #+#    #+#             */
+/*   Updated: 2018/09/20 17:18:27 by jyildiz-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MS_STRUCT_H
-# define MS_STRUCT_H
-typedef struct s_env	t_env;
-typedef struct s_cmd	t_cmd;
+#include <ms_prototype.h>
 
-struct s_env
+
+void	init_cmd(t_cmd *cmd)
 {
-	char	**environ;
-};
+	int i;
 
-struct s_cmd
-{
-	char	**line;
-	char	**tab;
-	char	cmd[7][9];
-	int		token;
-};
-
-#endif
+	i = -1;
+	cmd->line = NULL;
+	cmd->tab = NULL;
+	cmd->token = -1;
+	while (i < 8)
+	{
+		cmd[i] = ft_strcpy(cmd[i],  }
