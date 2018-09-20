@@ -6,7 +6,7 @@
 #    By: abaille <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/01/25 00:22:44 by abaille           #+#    #+#              #
-#    Updated: 2018/09/20 14:41:08 by fmadura          ###   ########.fr        #
+#    Updated: 2018/09/20 15:55:04 by fmadura          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,9 @@ SRC_PATH 	= ./srcs/
 OBJ_PATH 	= ./objs/
 INC_PATH 	= ./includes/ \
 
-SRC_NAME 	=
+SRC_NAME 	= main.c \
+			  environ.c \
+			  struct_env.c
 
 OBJ_NAME = $(SRC_NAME:.c=.o)
 
@@ -66,3 +68,7 @@ fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
+
+run : all
+	clear
+	./minishell

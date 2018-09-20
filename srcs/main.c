@@ -1,32 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   environ.c                                          :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fmadura <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/20 14:54:19 by fmadura           #+#    #+#             */
-/*   Updated: 2018/09/20 15:55:08 by fmadura          ###   ########.fr       */
+/*   Created: 2018/09/20 15:04:23 by fmadura           #+#    #+#             */
+/*   Updated: 2018/09/20 15:56:35 by fmadura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ms_prototype.h"
 
+extern char **environ;
 
-void	set_environ(char *key, char *value)
+int main(void)
 {
-	if (key && value)
-	{
-		return;
-	}
-}
+	t_env	env;
 
-void	print_environ(t_env *env)
-{
-	int i;
-
-	i = 0;
-	if (env->environ)
-		while (env->environ[i])
-			printf("%s\n", env->environ[i++]);
+	init_env(&env);
+	print_environ(&env);
+	return (0);
 }

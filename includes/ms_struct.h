@@ -6,10 +6,16 @@
 /*   By: fmadura <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/20 14:51:07 by fmadura           #+#    #+#             */
-/*   Updated: 2018/09/20 14:53:32 by fmadura          ###   ########.fr       */
+/*   Updated: 2018/09/20 15:53:38 by fmadura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MS_STRUCT_H
 # define MS_STRUCT_H
+typedef struct s_env	t_env;
+
+struct s_env
+{
+	char	**environ;
+};
 #endif
