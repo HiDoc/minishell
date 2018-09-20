@@ -6,7 +6,7 @@
 #    By: abaille <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/01/25 00:22:44 by abaille           #+#    #+#              #
-#    Updated: 2018/09/20 14:41:08 by fmadura          ###   ########.fr        #
+#    Updated: 2018/09/20 15:55:02 by jyildiz-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,8 +46,9 @@ INC = $(addprefix -I, $(INC_PATH))
 all: $(NAME)
 
 $(NAME): $(OBJ)
+	@make -C libft/
 	printf "\nSources are ready to be used !\n"
-	$(CC) $(CFLAGS) $(OBJ) $(INC) -o $(NAME) \
+	$(CC) $(CFLAGS) $(OBJ) $(INC) -L libft/ -lft -o $(NAME)
 
 $(OBJ) : | $(OBJ_PATH)
 
@@ -61,8 +62,10 @@ $(OBJ_PATH)%.o: $(SRC_PATH)%.c
 
 clean:
 	@rm -rf $(OBJ_PATH)
+	@make clean -C libft/
 
 fclean: clean
 	rm -f $(NAME)
+	@make fclean -C libft/
 
 re: fclean all
