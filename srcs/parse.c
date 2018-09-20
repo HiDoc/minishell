@@ -6,7 +6,7 @@
 /*   By: jyildiz- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/20 16:04:35 by jyildiz-          #+#    #+#             */
-/*   Updated: 2018/09/20 17:06:06 by jyildiz-         ###   ########.fr       */
+/*   Updated: 2018/09/20 18:06:23 by jyildiz-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,4 +37,18 @@ void	parse(t_env *env, t_cmd *cmd)
 {
 	cmd->tab = ft_strsplit(*line, ' ');
 	verif_cmd(cmd->tab) == -1 ? print_err(env, cmd) : 0;
+	if (cmd->token == 0)
+		cmd_echo(env, cmd);
+	else if (cmd->token == 1)
+		cmd_cd(env, cmd);
+	else if (cmd->token == 2)
+		cmd_setenv(env, cmd);
+	else if (cmd->token == 3)
+		cmd_unsetenv(env, cmd);
+	else if (cmd->token == 4)
+		cmd_env(env, cmd);
+	else if (cmd->token == 5)
+		cmd_exit(env, cmd);
+	else
+		print_err(env, cmd);
 }
