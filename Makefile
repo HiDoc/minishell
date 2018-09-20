@@ -6,7 +6,7 @@
 #    By: abaille <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/01/25 00:22:44 by abaille           #+#    #+#              #
-#    Updated: 2018/09/20 15:57:21 by fmadura          ###   ########.fr        #
+#    Updated: 2018/09/20 15:58:34 by fmadura          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,10 +27,10 @@ PINK		= "\\033[95m"
 OK			= $(CYAN)OK$(WHITE)
 WAIT		= $(RED)WAIT$(WHITE)
 
-ID_UN 		= $(shell id -un)
 SRC_PATH 	= ./srcs/
 OBJ_PATH 	= ./objs/
 INC_PATH 	= ./includes/ \
+			  ./libft/
 
 SRC_NAME 	= main.c \
 			  environ.c \

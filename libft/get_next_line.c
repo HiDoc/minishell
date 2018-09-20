@@ -6,11 +6,11 @@
 /*   By: jyildiz- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/28 12:14:02 by jyildiz-          #+#    #+#             */
-/*   Updated: 2018/09/20 15:10:32 by jyildiz-         ###   ########.fr       */
+/*   Updated: 2018/09/20 15:59:05 by fmadura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "libft.h"
 
 static char	*ft_read(int fd, char *str)
 {
