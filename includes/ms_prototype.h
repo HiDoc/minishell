@@ -6,12 +6,12 @@
 /*   By: fmadura <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/20 14:52:38 by fmadura           #+#    #+#             */
-/*   Updated: 2018/09/20 14:55:21 by fmadura          ###   ########.fr       */
+/*   Updated: 2018/09/20 14:57:06 by fmadura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MS_PROTOTYPE_H
 # define MS_PROTOTYPE_H
-# include "ms_prototype.h"
+# include "ms_define.h"
 # include "ms_struct.h"
 #endif
