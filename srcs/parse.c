@@ -1,28 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ms_struct.h                                        :+:      :+:    :+:   */
+/*   parse.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fmadura <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: jyildiz- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/20 14:51:07 by fmadura           #+#    #+#             */
-/*   Updated: 2018/09/20 16:07:50 by jyildiz-         ###   ########.fr       */
+/*   Created: 2018/09/20 16:04:35 by jyildiz-          #+#    #+#             */
+/*   Updated: 2018/09/20 16:08:15 by jyildiz-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MS_STRUCT_H
-# define MS_STRUCT_H
-typedef struct s_env	t_env;
-typedef struct s_cmd	t_cmd;
+#include <ms_prototype.h>
 
-struct s_env
+void	collect_cmd(t_env *env, t_cmd *cmd)
 {
-	char	**environ;
-};
 
-struct s_cmd
-{
-	char	**line;
-};
-
-#endif
+}
